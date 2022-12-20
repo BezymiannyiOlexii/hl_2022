@@ -1,0 +1,26 @@
+version: "3.9"
+services:
+  lite:
+    build:
+      context: ../task_2/
+    volumes:
+      - ../task_2:/node/app/src
+
+  json:
+    build:
+      context: ../task_3/
+    volumes:
+      - ../task_3/context:/context
+
+  nginx:
+    build:
+      context: .
+    depends_on:
+      - lite
+      - json
+    links:
+      - lite
+      - json
+    ports:
+      - 8000:80
+      - 8001:81
