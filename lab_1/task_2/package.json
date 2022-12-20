@@ -1,0 +1,9 @@
+{
+  "main": "index.html",
+  "devDependencies": {
+    "lite-server": "^2.2.0"
+  },
+  "scripts": {
+    "start": "lite-server"
+  }
+}

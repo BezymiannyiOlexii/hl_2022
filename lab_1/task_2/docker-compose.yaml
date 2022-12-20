@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  lite_server:
+    container_name: lite_server_name
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+        - "8002:3000"
+    restart: "no"
