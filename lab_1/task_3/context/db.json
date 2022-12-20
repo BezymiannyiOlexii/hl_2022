@@ -1,0 +1,32 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "vacuum cleaner",
+      "info": {
+        "price": "80 $",
+        "weight": "2.5 kg"
+      }
+    },
+    {
+      "id": 2,
+      "name": "kettle",
+      "info": {
+        "price": "40 $",
+        "weight": "1 kg"
+      }
+    },
+    {
+      "id": 10,
+      "name": "TV",
+      "info": {
+        "price": "70 $",
+        "weight": "2 kg"
+      }
+    }
+  ],
+  "profile": {
+    "id": "12345",
+    "name": "username"
+  }
+}
