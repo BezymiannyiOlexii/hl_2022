@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  json-server:
+    container_name: "json_server_name"
+    build:
+      context: .
+    ports:
+      - "8001:3000"
+    restart: "no"
+    volumes: 
+      - "./context:/context"    
