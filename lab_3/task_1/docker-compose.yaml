@@ -1,0 +1,31 @@
+version: "3.9"
+services:
+  mongo_main_server:
+    image: "mongo"
+    ports:
+      - "27017:27017"
+    hostname: mongo_main_server
+    
+  mongo_config_server:
+    image: "mongo"
+    deploy:
+      replicas: 3
+    depends_on:
+      - mongo_main_server
+    entrypoint: ["bash", "-c", "sleep 10 && mongosh --host mongo_main_server:27017"]
+
+  mongo_data_server:
+    image: "mongo"
+    deploy:
+      replicas: 4
+    depends_on:
+      - mongo_main_server
+    entrypoint: ["bash", "-c", "sleep 10 && mongosh --host mongo_main_server:27017"]
+
+  mongo_data_replica_server:
+    image: "mongo"
+    deploy:
+      replicas: 6
+    depends_on:
+      - mongo_main_server
+    entrypoint: ["bash", "-c", "sleep 10 && mongosh --host mongo_main_server:27017"]
