@@ -11,7 +11,6 @@ services:
     depends_on:
       - mongo_main_server
     volumes:
-      - ./data:/data
       - ./scripts:/scripts
     command:
       - /scripts/find_script.sh
