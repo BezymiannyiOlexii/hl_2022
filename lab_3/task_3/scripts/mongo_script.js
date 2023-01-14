@@ -67,8 +67,8 @@ function addOrderToCollection(){
 				currentLatitude: 1,
 				currentLongitude: 1,
 				distance: { $add: [
-				{ $abs: { $subtract: [ departureAddress.lat, "$currentLatitude"] } },
-				{ $abs: { $subtract: [ departureAddress.long, "$currentLongitude"] } }
+				{ $abs: { $subtract: [ departureAddress.Latitude, "$currentLatitude"] } },
+				{ $abs: { $subtract: [ departureAddress.Longitude, "$currentLongitude"] } }
 				]}
 			}
 		},
@@ -86,8 +86,8 @@ function addOrderToCollection(){
 	db.drivers.updateOne({ "_id": closestDriver._id },
 	{ $set:
 		{
-			"currentLatitude": arrivalAddress.lat,
-			"currentLongitude": arrivalAddress.long
+			"currentLatitude": arrivalAddress.Latitude,
+			"currentLongitude": arrivalAddress.Longitude
 		}
 	})
 	
@@ -193,10 +193,10 @@ function addOrderToCollection(){
 	{
 		driverId: closestDriver._id,
 		clientId: client._id,
-		departureLatitude: departureAddress.lat,
-		departureLongitude: departureAddress.long,
-		arrivalLatitude: arrivalAddress.lat,
-		arrivalLongitude: arrivalAddress.long,
+		departureLatitude: departureAddress.Latitude,
+		departureLongitude: departureAddress.Longitude,
+		arrivalLatitude: arrivalAddress.Latitude,
+		arrivalLongitude: arrivalAddress.Longitude,
 		price: price,
 		startDate: startDate,
 		endDate: endDate,
