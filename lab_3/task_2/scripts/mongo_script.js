@@ -1,4 +1,4 @@
 use db
 
-var foundStuff = db.london_postcodes.find({ dointr: 201409 })
+var foundStuff = db.london_postcodes.find({ Northing: 168873 })
 printjson(foundStuff)
